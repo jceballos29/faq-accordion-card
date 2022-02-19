@@ -14,13 +14,8 @@ import backgroundDesktop from "./images/bg-pattern-desktop.svg"
 const mobile = window.innerWidth <= 860;
 
 function App() {
-    const [selectedQuestion, setSelectedQuestion] = useState(-1);
 
-    const handleSelectedQuestion = (id) => {
-        selectedQuestion === id
-            ? setSelectedQuestion(-1)
-            : setSelectedQuestion(id);
-    };
+    const [selectedQuestion, setSelectedQuestion] = useState(1);
 
     return (
         <div className="App">
@@ -46,7 +41,7 @@ function App() {
                                         : "card__question"
                                 }
                                 onClick={() => {
-                                    handleSelectedQuestion(id);
+                                    setSelectedQuestion(id);
                                 }}
                             >
                                 <div className="card__question__header">
